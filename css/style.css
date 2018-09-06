@@ -1,3 +1,4 @@
+/*The section handles the styling of the homepage*/
 body{
  font-family: Halvetica;
  font-size: 15px;
@@ -5,75 +6,18 @@ body{
  padding: 0;
  margin:0px;
  background-color: #ffffe2 ;
- 
 }
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.recipe-grid{
-	width: 80%;
-	display: flex;
-	flex-wrap: wrap;
-}
-.recipe-img{
-	width: 200px;
-	}
-
-.recipe-card{
-	width: 200px;
-	margin: 10px;
-	border:solid 1px rgba(222,222,222,0.6);
-	background-color: white;
-}
-
-.price-tag{
-	color: #F44336;
-	font-weight: bold;
-}
-
 #container{
 	width: 900px;
 	margin: auto;
 }
-
-#form-box{
-	margin-top: 50px;
-	width: 400px;
-	margin: auto;
-	text-align: center;
-}
-
-.button{
-	padding: 10px;
-	background-color: #F44336;
-	border: solid 2px #B71C1C;
-	color: white;
-	width: 80%;
-}
-.ldelicacies{
-	body {margin:0;padding:0}
-}
 .wrapper{
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	overflow: hidden;
 }
  ul{
-	margin: 0;
+ 	margin: 0;
 	padding: 0;
 }
 
@@ -95,7 +39,7 @@ header a{
 	color: #ffffff;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 25px;
 	font -font-weight: bold;
 }
 
@@ -111,22 +55,13 @@ header a{
  }
 
  header #banner h1{
+ 	font-size: 55px;
  	margin: 0;
  }
 
  header nav{
  	float: right;
  	margin-top: 30px;
- }
-
- header.highlight, header.current a{
- 	color: #FF1744;
- 	font-weight:bold; 
- }
-
- header a: hover{
- 	background-color: #FF1744
- 	font-weight:bold;
  }
 
  .background{
@@ -136,77 +71,251 @@ header a{
  background-size: cover;
  position: relative;
  height: 550px;
-
-
 }
  #showcase{
  	min-height: 480px;
  	text-align: center;
  	font-size:25px;
- 	color:#01579B;
  	font-weight: bolder;
- }
-
+ 	width:100%;
+}
  #showcase h1{
  	font-size: 55px;
- 	color: #DAF7A6;
+ 	color: #A2FC10   ;
 	font-weight: bolder;
  }
-
  #newsupdate{
  	padding: 15px;
- 	color: #FFC300  ;
+ 	color: #FFC300;
+ 	font-size: 18px;
+ 	font-weight: bold;
  	background:brown;
  }
 
- #newsupdate h1{
- 	float:left;
- 	
- }
-
  #newsupdate form{
- 	float:right;
- 	margin-top: 15px;
+ 	margin: auto;
+ 	text-align: center;
+ }
+ #newsupdate form button{
+ 	text-decoration-line: none;
+	border-radius: 25px;
+	background-color: #1B5E20;
+	border: solid 2px ;
+	color: white;
+	width: auto;
+	padding: 14px 40px;
  }
  #newsupdate input{
  	padding: 4px;
- 	height: 25px;
- 	width: 250px;
+ 	height: 45px;
+ 	width: 300px;
  }
  #menu {
  	margin-top: 20px;
- 	background-color:#A52A2A;
- 	
- 	
- }
-
+ 	background-color:brown;
+}
  .meals{
 	 background:#A52A2A;
 	float:left;
-	width: 20%;
+	width: 25%;
 	padding-left: 15px;
 	font-size: 20px;
 	color: #DAF7A6;
 }
-
 .meals img{
 	width:98%;
-	
 }
-
- #end{
-
+.bottom{
+	background-color: brown;
+}
+#end{
  	font-style: bold;
  	text-align: center;
+ 	left: 0;
  	bottom: 0;
- 	position: fixed;
+ 	font-size: 19px;
  	width: 100%;
- 	color:#B9F6CA ;
+ 	color:white ;
+ 	height: 5%;
  	background-color:#1B5E20; 
+
+ /*The section handles the styling of the About us page*/
+ }
+ #about h2{
+ 	color:#c62828 ;
+ 	text-align: center;
+ 	margin: 0;
+ 	padding: 0;
+ }
+ .badge img{
+ 	width:900px;
+ 	height: 200px;
+ }
+ #about p{
+ 	
+ 	color: green;
+ 	display: inline-block;
+ 	font-size: 20px;
+ 	font-style: italic;
+ }
+ article{
+
+	font-family: sans-serif;
+	font-size: 18px;
+	display:inline-block;
+	color:green;
+
+ }
+ article h3{
+ 	padding: 0;
+ 	margin:0;
+ 	color:#c62828;
  }
  
+ 	/*The section handles the styling of the Delicacies page*/
+
  .food-image{
 	 width:350px; height:247px;
 	 
  }
- 
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.recipe-grid{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+.recipe-img{
+	width: 200px;
+	}
+
+.recipe-card{
+	width: 202px;
+	margin: 10px;
+	border:solid 2px rgba(222,222,222,0.6);
+	background-color: #1B5E20;
+	text-align: center;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+#group h2{
+	text-align: center;
+	color: #1B5E20;
+}
+
+.price-tag{
+	color:yellow;
+	font-weight: bold;
+}
+
+
+fieldset{
+	position: absolute;
+	left:300px;
+	right:300px;
+	border-width: 5px;
+	border-color: transparent;
+	margin-top: 10px;
+	background-color:#1D8348;
+
+}
+.form-group button{
+  margin:auto;
+  display:block;
+}
+h2{
+	text-align: center;
+	color: white;
+	font-size: 25px;
+}
+.message{
+	text-align: center;
+	color:white;
+	text-align:left;
+	font-size: 19px;
+	font-weight: bold;
+}
+label{
+	color: white;
+	font-weight: bolder;
+	font-size: 16px;
+	font-style: sans-serif;
+}
+textarea {
+    width: 80%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+#form-box{
+	margin-top: 50px;
+	width: 400px;
+	margin: auto;
+	text-align: center;
+}
+#form-box h2{
+color: white;
+}
+.button{
+	text-decoration-line: none;
+	border-radius: 25px;
+	background-color: #F44336;
+	border: solid 2px ;
+	color: white;
+	width: auto;
+	padding: 14px 40px;
+}
+.ldelicacies{
+	body {margin:0;padding:0}
+}
+.column h2{
+	color: green;
+	text-decoration-style: none;
+	} 
+	
+}
+.profilepix{
+	width: 140px;
+	height: 140px;
+	padding: 5px;
+	top: 255px;
+	left: 110px;
+	position: absolute;
+	border-radius: 2px/2px;
+	-webkit-box-shadow; 0 3px 8px rgba(0, 0, 0, .25);
+}
+*{
+	box-sizing: border-box;
+}
+
+.column{
+	float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+}
+.row:after{
+	content: "";
+    display: table;
+    clear: both;
+}
