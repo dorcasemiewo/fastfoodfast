@@ -1,0 +1,43 @@
+{
+  "name": "fastfoodfast",
+  "version": "1.0.0",
+  "description": "A fast food service app",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorcasemiewo/fastfoodfast.git"
+  },
+  "keywords": [
+    "dorcasemi",
+    "fastfoodfast\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dewo",
+    "fastfoodfast"
+  ],
+  "author": "Dorcas Emiewo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dorcasemiewo/fastfoodfast/issues"
+  },
+  "homepage": "https://github.com/dorcasemiewo/fastfoodfast#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+	"chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+	"express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0",
+    "should": "^13.2.3",
+	"node": "8.11.4"
+  },
+  "engines": {
+	"node": "8.11.4"
+  }
+}
