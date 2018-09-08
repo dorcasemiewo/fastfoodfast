@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 //routes for your endpoint
 app.use('/api', apiRoutes.router);
-
 //routes for your html pages
 app.use('/', apiRoutes.htmlrouter);
 
@@ -25,6 +24,8 @@ app.use(function(req, res, next){
   next(err);
 });
 
+
+
 // error handler
 app.use(function(err, req, res, next){
   res.locals.message = err.message;
@@ -32,6 +33,7 @@ app.use(function(err, req, res, next){
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 
 app.set('port', (process.env.PORT || 5000));

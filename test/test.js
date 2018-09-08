@@ -4,7 +4,7 @@ var request = require('request');
 var expect = require("chai").expect;
 var chai = require('chai');
 var util = require("util");
-var controller = require("../controller");
+var controller = require("../controller/controller.js");
 var server = require('../app').server;
 var chaiHttp = require('chai-http');
 
@@ -22,6 +22,7 @@ describe('/GET orders', () => {
       });
   });
 
+/*
 describe('/GET orders', () => {
       it('it should GET an Order by its ID', (done) => {
         chai.request(server)
@@ -32,6 +33,7 @@ describe('/GET orders', () => {
             });
       });
   });
+  */
 
   describe('/POST new  order', () => {
         it('it should create a new order', (done) => {
