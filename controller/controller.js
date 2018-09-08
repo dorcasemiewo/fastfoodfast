@@ -6,6 +6,11 @@ var sendJSONResponse = function (res, status, content){
   res.json(content);
 };
 
+defaultHomePage = function(req, res){
+  //res.sendFile(__dirname+'/UI/index.html');
+  res.render('index');
+};
+
 getAllOrders = function(req, res) {
     sendJSONResponse(res, 200, orders);
 };
@@ -16,7 +21,7 @@ getOrderById = function(req, res) {
   }else{
     orders.forEach(function(order){
       if(order.id == req.params.orderId){
-        sendJSONResponse(res, 200, {status: "success", message: "Entry Retrieved", order: order});
+        sendJSONResponse(res, 200, {status: "success", message: "Order Retrieved", order: order});
       }
     });
   }
@@ -26,7 +31,7 @@ getOrderById = function(req, res) {
 
 createNewOrder = function(req, res) {
   var data = req.body;
-  if(data.id !== "" && data.title !== "" && data.details !== ""){
+  if(data.id !== "" && data.menu !== "" && data.price !== "" && data.status !== ""){
     orders.push(req.body);
     sendJSONResponse(res, 200, orders);
   }else{
@@ -43,9 +48,10 @@ editOrder = function(req, res){
 
     orders.forEach(function(order){
       if(order.id == req.params.orderId){
-        order.title = req.body.title;
-        order.details = req.body.details;
-        sendJSONResponse(res, 200, {status: "success", message: "order updated", order: order});
+        //order.menu = req.body.menu;
+        //order.price = req.body.price;
+        order.status = req.body.status;
+        sendJSONResponse(res, 200, {status: "success", message: "order status updated", order: order});
       }
     });
     sendJSONResponse(res, 200, {status: "failed", message: "order id did not match any order"});
@@ -58,4 +64,5 @@ module.exports = {
   getOrderById : getOrderById,
   createNewOrder: createNewOrder,
   editOrder : editOrder,
+  defaultHomePage: defaultHomePage
 };
