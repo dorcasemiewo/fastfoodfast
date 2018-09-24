@@ -1,10 +1,10 @@
-var express = require('express');//inbuilt module
-var bodyParser = require('body-parser'); //inbuilt module
-var controller = require('./controller/controller.js'); //custom module
-var urlencodedParser = bodyParser.urlencoded({extended:false})
-var apiRoutes = require('./routes/routes.js'); //custom module
+const express = require('express');//inbuilt module
+const bodyParser = require('body-parser'); //inbuilt module
+const controller = require('./controller/controller.js'); //custom module
+const urlencodedParser = bodyParser.urlencoded({extended:false})
+const apiRoutes = require('./routes/routes.js'); //custom module
 
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
@@ -12,14 +12,14 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-//routes for your endpoint
+//routes to the endpoint
 app.use('/api', apiRoutes.router);
-//routes for your html pages
+//routes for html pages
 app.use('/', apiRoutes.htmlrouter);
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next){
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -38,7 +38,7 @@ app.use(function(err, req, res, next){
 
 app.set('port', (process.env.PORT || 5000));
 
-var server = app.listen(app.get('port'), function(){
+const server = app.listen(app.get('port'), function(){
   console.log('server is listening on port: '+ server.address().port);
 });
 

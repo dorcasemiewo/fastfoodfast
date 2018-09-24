@@ -9,5 +9,5 @@ let orders = [
 
 //export default orders;
 module.exports = {
-  orders : orders
+  orders: orders
 };
