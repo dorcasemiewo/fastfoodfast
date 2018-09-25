@@ -1,15 +1,16 @@
-var assert = require('assert');
-var should = require('should');
-var request = require('request');
-var expect = require("chai").expect;
-var chai = require('chai');
-var util = require("util");
-var controller = require("../controller/controller.js");
-var server = require('../app').server;
-var chaiHttp = require('chai-http');
+const assert = require('assert');
+const should = require('should');
+const request = require('request');
+const expect = require("chai").expect;
+const chai = require('chai');
+const util = require("util");
+const controller = require("../controller/controller.js");
+const server = require('../app').server;
+const chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 
+describe('Fast-Food-Fast', () =>{
 
 describe('/GET orders', () => {
       it('it should GET all the food Orders', (done) => {
@@ -22,9 +23,9 @@ describe('/GET orders', () => {
       });
   });
 
-/*
-describe('/GET orders', () => {
-      it('it should GET an Order by its ID', (done) => {
+
+describe('/GET order', () => {
+      it('it should GET a single Order by its ID', (done) => {
         chai.request(server)
             .get('/api/v1/orders/3')
             .end((err, res) => {
@@ -33,7 +34,7 @@ describe('/GET orders', () => {
             });
       });
   });
-  */
+  
 
   describe('/POST new  order', () => {
         it('it should create a new order', (done) => {
@@ -56,3 +57,6 @@ describe('/PUT update order', () => {
             });
       });
   });
+
+
+});
