@@ -1,321 +1,345 @@
 /*The section handles the styling of the homepage*/
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 body{
- font-family: Halvetica;
- font-size: 15px;
- line-height: 1.5;
- padding: 0;
- margin:0px;
- background-color: #ffffe2 ;
-}
-#container{
-	width: 900px;
-	margin: auto;
-}
-.wrapper{
-	width: 90%;
-	margin: auto;
-	overflow: hidden;
-}
- ul{
- 	margin: 0;
+	font-family: Halvetica;
+	font-family: "Source Sans Pro", "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
 	padding: 0;
-}
-
-input{
-	padding: 10px;
-	border: 1px solid rgba(222,222,222, 0.7);
-	width: 80%;
-}
-
-header{
-	background: #F44336;
-	color:#FFEBEE;
-	padding-top: 0px;
-	min-height: 70px;
-	border-bottom: #006400 3px solid;
-}
-
-header a{
-	color: #ffffff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 25px;
-	font -font-weight: bold;
-}
-
- header li{
- 	float:left;
- 	display:inline;
- 	padding: 0 20px 0 20px;
- }
-
- header #banner{
- 	float: left;
- 	font-size: 30px;
- }
-
- header #banner h1{
- 	font-size: 55px;
- 	margin: 0;
- }
-
- header nav{
- 	float: right;
- 	margin-top: 30px;
- }
-
- .background{
- background-image: url("../imgs/bg.jpg"); 
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- position: relative;
- height: 550px;
-}
- #showcase{
- 	min-height: 480px;
- 	text-align: center;
- 	font-size:25px;
- 	font-weight: bolder;
- 	width:100%;
-}
- #showcase h1{
- 	font-size: 55px;
- 	color: #A2FC10   ;
-	font-weight: bolder;
- }
- #newsupdate{
- 	padding: 15px;
- 	color: #FFC300;
- 	font-size: 18px;
- 	font-weight: bold;
- 	background:brown;
- }
-
- #newsupdate form{
- 	margin: auto;
- 	text-align: center;
- }
- #newsupdate form button{
- 	text-decoration-line: none;
-	border-radius: 25px;
-	background-color: #1B5E20;
-	border: solid 2px ;
-	color: white;
-	width: auto;
-	padding: 14px 40px;
- }
- #newsupdate input{
- 	padding: 4px;
- 	height: 45px;
- 	width: 300px;
- }
- #menu {
- 	margin-top: 20px;
- 	background-color:brown;
-}
- .meals{
-	 background:#A52A2A;
-	float:left;
-	width: 25%;
-	padding-left: 15px;
-	font-size: 20px;
-	color: #DAF7A6;
-}
-.meals img{
-	width:98%;
-}
-.bottom{
-	background-color: brown;
-}
-#end{
- 	font-style: bold;
- 	text-align: center;
- 	left: 0;
- 	bottom: 0;
- 	font-size: 19px;
- 	width: 100%;
- 	color:white ;
- 	height: 5%;
- 	background-color:#1B5E20; 
-
- /*The section handles the styling of the About us page*/
- }
- #about h2{
- 	color:#c62828 ;
- 	text-align: center;
- 	margin: 0;
- 	padding: 0;
- }
- .badge img{
- 	width:900px;
- 	height: 200px;
- }
- #about p{
- 	
- 	color: green;
- 	display: inline-block;
- 	font-size: 20px;
- 	font-style: italic;
- }
- article{
-
-	font-family: sans-serif;
-	font-size: 18px;
-	display:inline-block;
-	color:green;
-
- }
- article h3{
- 	padding: 0;
- 	margin:0;
- 	color:#c62828;
- }
- 
- 	/*The section handles the styling of the Delicacies page*/
-
- .food-image{
-	 width:350px; height:247px;
-	 
- }
- table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.recipe-grid{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	
-}
-.recipe-img{
-	width: 200px;
+	margin:0px;
+	background-color: #ffffe2 ;
+   }
+   #container{
+	   width: 900px;
+	   margin: auto;
+   }
+   .wrapper{
+	   	width: 90%;
+	   	margin: auto;
+	   	overflow: hidden;
+	   	display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+   }
+	ul{
+		margin: 0;
+	   padding: 0;
+   }
+   
+   input{
+	   padding: 10px;
+	   border: 1px solid rgba(222,222,222, 0.7);
+	   width: 80%;
+   }
+   
+   header{
+	   background: #ffffff;
+	   color:#363636;
+	   padding-top: 0px;
+	   min-height: 70px;
+	   border-bottom: #FE6057 3px solid;
+   }
+   
+   header a{
+	   color: #363636;
+	   text-decoration: none;
+	   /* text-transform: uppercase; */
+	   font-size: 20px;
+	   font-weight: bold;
+   }
+   
+	header li{
+		float:left;
+		display:inline;
+		padding: 0 20px 0 20px;
 	}
+   
 
-.recipe-card{
-	width: 202px;
-	margin: 10px;
-	border:solid 2px rgba(222,222,222,0.6);
-	background-color: #1B5E20;
-	text-align: center;
-	font-weight: bold;
-	color: #ffffff;
-}
+   
+	header #banner h1{
+		font-size: 24px;
+		margin: 0;
+	}
+   
+	header nav{
+		float: right;
+		margin-top: 30px;
+	}
+   
+	.background{
+	/* background-image: url("../imgs/bg.jpg");  */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #dddddd;
+	position: relative;
+	height: 550px;
+   }
+	#showcase{
+		min-height: 480px;
+		text-align: center;
+		font-size:25px;
+		font-weight: bolder;
+		width:100%;
+   }
+	#showcase h1{
+		font-size: 55px;
+		color: #A2FC10   ;
+	   font-weight: bolder;
+	}
+	#newsupdate{
+		padding: 15px;
+		color: #FFC300;
+		font-size: 18px;
+		font-weight: bold;
+		background:brown;
+	}
+   
+	#newsupdate form{
+		margin: auto;
+		text-align: center;
+	}
+	#newsupdate form button{
+		text-decoration-line: none;
+	   border-radius: 25px;
+	   background-color: #FE6057;
+	   border: solid 2px ;
+	   color: white;
+	   width: auto;
+	   padding: 14px 40px;
+	}
+	#newsupdate input{
+		padding: 4px;
+		height: 45px;
+		width: 300px;
+	}
+	#menu {
+		margin-top: 20px;
+		background-color:brown;
+   }
+	.meals{
+		background:#ffffff;
+	   float:left;
+	   width: 23%;
+	   padding: 5px;
+	   padding-left: 15px;
+	   margin: 5px;
+	   font-size: 14px;
+	   color: rgb(61, 61, 60);
+   }
 
-#group h2{
-	text-align: center;
-	color: #1B5E20;
-}
-
-.price-tag{
-	color:yellow;
-	font-weight: bold;
-}
-
-
-fieldset{
-	position: absolute;
-	left:300px;
-	right:300px;
-	border-width: 5px;
-	border-color: transparent;
-	margin-top: 10px;
-	background-color:#1D8348;
-
-}
-.form-group button{
-  margin:auto;
-  display:block;
-}
-h2{
-	text-align: center;
-	color: white;
-	font-size: 25px;
-}
-.message{
-	text-align: center;
-	color:white;
-	text-align:left;
-	font-size: 19px;
-	font-weight: bold;
-}
-label{
-	color: white;
-	font-weight: bolder;
-	font-size: 16px;
-	font-style: sans-serif;
-}
-textarea {
-    width: 80%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-}
-#form-box{
+   .menuebox{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	margin-top: 50px;
-	width: 400px;
-	margin: auto;
-	text-align: center;
-}
-#form-box h2{
-color: white;
-}
-.button{
-	text-decoration-line: none;
-	border-radius: 25px;
-	background-color: #F44336;
-	border: solid 2px ;
-	color: white;
-	width: auto;
-	padding: 14px 40px;
-}
-.ldelicacies{
-	body {margin:0;padding:0}
-}
-.column h2{
-	color: green;
-	text-decoration-style: none;
-	} 
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom:100px;
+   }
+   .meals img{
+	   width:98%;
+   }
+   .bottom{
+	   background-color: brown;
+   }
+   #end{
+		font-style: bold;
+		text-align: center;
+		left: 0;
+		font-size: 19px;
+		bottom: 0;
+		width: 100%;
+		color:white ;
+		height: 80px;
+		background-color:#FE6057; 
+		position: fixed;
+    bottom: 0;
+    width: 100%;
+   
+	/*The section handles the styling of the About us page*/
+	}
+	#about h2{
+		color:#c62828 ;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	.badge img{
+		width:900px;
+		height: 200px;
+	}
+	#about p{
+		
+		color: rgb(54, 54, 54);
+		display: inline-block;
+		font-size: 20px;
+		font-style: italic;
+	}
+	article{
+   
+	   font-family: sans-serif;
+	   font-size: 18px;
+	   display:inline-block;
+	   color:rgb(54, 54, 54);
+   
+	}
+	article h3{
+		padding: 0;
+		margin:0;
+		color:rgb(54, 54, 54);
+	}
 	
-}
-.profilepix{
-	width: 140px;
-	height: 140px;
-	padding: 5px;
-	top: 255px;
-	left: 110px;
-	position: absolute;
-	border-radius: 2px/2px;
-	-webkit-box-shadow; 0 3px 8px rgba(0, 0, 0, .25);
-}
-*{
-	box-sizing: border-box;
-}
-
-.column{
-	float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px;
-}
-.row:after{
-	content: "";
-    display: table;
-    clear: both;
-}
+		/*The section handles the styling of the Delicacies page*/
+   
+	.food-image{
+		width:350px; height:247px;
+		
+	}
+	table {
+	   font-family: arial, sans-serif;
+	   border-collapse: collapse;
+	   width: 100%;
+   }
+   
+   td, th {
+	   border: 1px solid #dddddd;
+	   text-align: left;
+	   padding: 8px;
+   }
+   
+   tr:nth-child(even) {
+	   background-color: #dddddd;
+   }
+   
+   .recipe-grid{
+	   width: 100%;
+	   display: flex;
+	   flex-wrap: wrap;
+	   
+   }
+   .recipe-img{
+	   width: 200px;
+	   }
+   
+   .recipe-card{
+	   width: 202px;
+	   margin: 10px;
+	   border:solid 2px rgba(222,222,222,0.6);
+	   background-color: #FE6057;
+	   text-align: center;
+	   font-weight: bold;
+	   color: #ffffff;
+   }
+   
+   #group h2{
+	   text-align: center;
+	   color: rgb(75, 74, 74);
+   }
+   
+   .price-tag{
+	   color:yellow;
+	   font-weight: bold;
+   }
+   
+   
+   fieldset{
+	   position: absolute;
+	   left:300px;
+	   right:300px;
+	   border-width: 5px;
+	   border-color: transparent;
+	   margin-top: 10px;
+	   background-color:rgba(75, 70, 70, 0.6);
+   
+   }
+   .form-group button{
+	 margin:auto;
+	 display:block;
+   }
+   h2{
+	   text-align: center;
+	   color: rgba(245, 240, 240, 0.925);
+	   font-size: 25px;
+   }
+   .message{
+	   text-align: center;
+	   color:white;
+	   text-align:left;
+	   font-size: 19px;
+	   font-weight: bold;
+   }
+   label{
+	   color: white;
+	   font-weight: bolder;
+	   font-size: 16px;
+	   font-style: sans-serif;
+   }
+   textarea {
+	   width: 80%;
+	   height: 150px;
+	   padding: 12px 20px;
+	   box-sizing: border-box;
+	   border: 2px solid #ccc;
+	   border-radius: 4px;
+	   background-color: #f8f8f8;
+	   resize: none;
+   }
+   #form-box{
+	   margin-top: 50px;
+	   width: 400px;
+	   margin: auto;
+	   text-align: center;
+   }
+   #form-box h2{
+   color: white;
+   }
+   .button{
+	   text-decoration-line: none;
+	   border-radius: 25px;
+	   background-color: #F44336;
+	   border: solid 2px ;
+	   color: white;
+	   width: auto;
+	   padding: 14px 40px;
+   }
+   .ldelicacies{
+	   margin:0;padding:0
+   }
+   .column h2{
+	   color: green;
+	   text-decoration-style: none;
+	   
+	   
+   }
+   .profilepix{
+	   width: 140px;
+	   height: 140px;
+	   padding: 5px;
+	   top: 255px;
+	   left: 110px;
+	   position: absolute;
+	   border-radius: 2px/2px;
+	   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+   }
+   *{
+	   box-sizing: border-box;
+   }
+   
+   .column{
+	   float: left;
+	   width: 50%;
+	   padding: 10px;
+	   height: 300px;
+   }
+   .row:after{
+	   content: "";
+	   display: table;
+	   clear: both;
+   }
