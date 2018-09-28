@@ -1,5 +1,5 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './server/routes/server.js',

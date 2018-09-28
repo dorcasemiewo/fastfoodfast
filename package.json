@@ -1,7 +1,7 @@
 {
-  "name": "fastfoodfast",
-  "version": "1.0.0",
-  "description": "Api endpoints",
+  "name": "FastFoodFast",
+  "version": "1.1.0",
+  "description": "Route endpoints",
   "engines": {
     "node": "8.9.1"
   },
@@ -13,12 +13,23 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "bookshelf": "^0.13.3",
+    "bookshelf-secure-password": "^3.1.0",
     "chai-as-promised": "^7.1.1",
-    "chai-http": "^4.2.0",
+    "chai-http": "^4.0.0",
+    "dotenv": "^6.0.0",
     "express": "^4.15.2",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
     "morgan": "^1.9.0",
-    "pg-promise": "^8.4.5",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.4.3",
+    "pg-promise": "^8.4.6",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
@@ -31,10 +42,10 @@
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
-    "eslint": "^5.6.0",
+    "eslint": "^5.1.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-json": "^2.0.0",
-    "eslint-plugin-json": "^1.2.1",
+    "eslint-plugin-json": "^1.2.0",
     "express": "^4.16.3",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",

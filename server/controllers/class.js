@@ -1,86 +1,141 @@
-import orders from '../model/orders';
-import newOrder from '../model/newOrder';
+import client from '../routes/server'  
 
+class Route {
 
-class Api {
+    static addOrder (req,res) {
 
-     /**
-     * Get all of a user's orders
-     * @static
-     * @param {*} req - request object
-     * @param {*} res - response object
-     * @returns {object} json
-     * @memberof Controllers
-     */
-
-    static getOrders (req,res) {
-      res.status(200).json(orders)
-
-    }
-    
-    static welcome(req,res) {
-       res.json({message: 'welcome to FastFoodFast'});
-    }
-
-    
-    static createOrder (req,res) {
-        const {id,menu,price,status} = req.body;
-        const editOrder = req.body;
-
-        let order = orders.find(obj => parseInt(obj.id) == Number(editOrder.id))
-     
-        if (order) {
-            res.status(404).json({ message: "Order with the id exist"});
-          
-        } else {
-            orders.push(editOrder);
-            res.status(201).json(orders);
-        }
-    }
-    
-    static  getOrder (req,res) {
-        const reqOrder = req.params.id;
-     
-        const order = orders.find(obj => obj.id === Number(reqOrder));
-        if (order) {
-        
-            res.status(200).json(order)
-        } else {
-             res.status(404).json({ message: "Order not found!"});
-        }
-    }
-
-     
-    static updateOrder (req,res) {
-      
-        let {id,menu,price,status} = req.body;
-        const order1 = req.body;
-        let orderNumber = req.params.id; 
-
-     
-        let order = orders.find(obj => parseInt(obj.id) === Number(orderNumber));
-    
-        if (order) {
-            if (orderNumber == order1.id) {
-               order.id = req.body.id
-               order.menu = req.body.menu
-               order.price = req.body.price
-               order.status = req.body.status
-              
-
-            res.status(201).json(orders);
-        } else {
-            res.status(404).json({ message: "Id mismatch!"});
+        if(!req.body.menu || !req.body.price || !req.body.quantity || !req.body.status || !req.body.users_id) {
+            return res.status(401).send('All fields are not filled');
         }
 
-            
-        } else {
-            res.status(404).json({ message: "Order not found!"});
-        };
+        const query = {
+            text: 'INSERT INTO orders(menu, price, quantity, status, users_id) VALUES($1, $2, $3, $4, $5)',
+            values: [req.body.menu, req.body.price, req.body.quantity, req.body.status, req.body.users_id],
+          }
+     client.query(query)
+     .then(data => {
+        console.log(data.id); // print new user id;
+                return res.send('Order created');
+     }).catch(e => console.error(e.stack))
+    };
+   
+
+    static addMenu (req,res) {
+
+        if(!req.body.meal || !req.body.price || !req.body.user_id ) {
+            return res.status(401).send('All fields are not filled');
+        }
+
+        const query = {
+            text: 'INSERT INTO menu(meal, price, user_id) VALUES($1, $2, $3)',
+            values: [req.body.meal, req.body.price,req.body.user_id],
+          }
+     client.query(query)
+     .then(data => {
+        console.log(data.id); // print new user id;
+                return res.send('Menu created');
+     }).catch(e => console.error(e.stack))
+    };
+
+
+
+    static getOrders (req,res, next) {
+            //Get user details
+                //Use token to find user on table
+            //If user = admin allow else terminate request
+
+            console.log(req.user)
+            client.query('SELECT * FROM orders')
+            .then(data => {
+            res.json(data.rows);
+        }).catch((err)=>{
+            console.log('ERROR:', error);
+
+        });
 
     }
+
+    static getOrder (req,res) {
+         client.query('SELECT * FROM orders WHERE id = $1', [req.params.id])
+        .then(order => {
+            if (order.rowCount == 1) {
+                res.json(order.rows);
+            } else {
+                res.json({ message: 'Order not found' }); 
+            }
+           
+
+        }).catch((err)=>{
+            console.log('ERROR:', error);
+
+
+        });
+
+
+
+    };
+
+
+    static getMenu (req,res) {
+        client.query('SELECT * FROM menu')
+        .then(data => {
+        res.json(data.rows);
+    }).catch((err)=>{
+        console.log('ERROR:', error);
+
+    });
 
 }
 
 
-export default Api;
+    static editOrder (req,res) {
+             
+
+        if( !req.body.status) {
+            return res.status(401).send('All fields are not filled');
+        }
+
+        client.query('SELECT * FROM orders WHERE id = $1', [req.params.id])
+        .then(order => {
+            if (order.rowCount == 1) {
+                var queryString = "UPDATE orders SET status = '" + req.body.status +  "' WHERE  id = " + req.params.id + ";";
+                client.query(queryString, function(err, result) {
+                    if (err) {
+                        res.send("Failed to update status ");
+                        throw err;
+                    } else {
+                        res.send("Successfully updated status!! ");
+                    }
+                });
+            
+
+                
+            } else {
+                res.json({ message: 'Order not found' }); 
+            }
+           
+
+        }).catch((err)=>{
+            console.log('ERROR:', error);
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }; 
+
+}
+
+export default Route;

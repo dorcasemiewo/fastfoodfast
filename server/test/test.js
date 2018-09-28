@@ -1,13 +1,10 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../routes/server';
+import app from '../routes/server'
 
 import  orders from '../model/orders';
 import  newOrder from '../model/newOrder';
-import  editOrder from '../model/editOrder';
-
-
-
+import editOrder from '../model/editOrder';
 
 const { expect } = chai;
 
@@ -18,9 +15,9 @@ chai.use(chaiHttp);
 
     describe('/GET all orders', () => {
         it('should get all orders', (done) => {
-            chai.request('http://localhost:4001/api/v1')
-            .get('/orders')
-            .end((err, res) => {
+            chai.request(app).
+            get('/api/v2/orders').
+            end((err, res) => {
                 expect(orders.length).to.equal(res.body.length);
                 expect(res.statusCode).to.equal(200); 
                 if (err) return done(err);
@@ -31,10 +28,10 @@ chai.use(chaiHttp);
 
     describe('/ display welcome message', () => {
         it('display welcome message', (done) => {
-            chai.request('http://localhost:4001/api/v1')
-            .get('/')
-            .end((err, res) => {
-                expect(res.body.message).to.equal('welcome to FastFoodFast');
+            chai.request(app).
+            get('/api/v2/').
+            end((err, res) => {
+                expect(res.body.message).to.equal('Welcome to FastFoodFast');
                 if (err) return done(err);
                 done();
             });
@@ -43,9 +40,9 @@ chai.use(chaiHttp);
 
     describe('/GET order', () => {
         it('should get a single order', (done) => {
-            chai.request('http://localhost:4001/api/v1')
-            .get('/orders/1')
-            .end((err, res) => {
+            chai.request(app).
+            get('/api/v2/orders/1').
+            end((err, res) => {
                 expect(res.statusCode).to.equal(200);
                 expect("Fried Rice").to.equal(res.body.menu);
                 if (err) return done(err);
@@ -55,8 +52,8 @@ chai.use(chaiHttp);
 
 
         it('should not have an order', (done) => {
-            chai.request('http://localhost:4001/api/v1').
-            get('/orders/5').
+            chai.request(app).
+            get('/api/v2/orders/5').
             end((err, res) => {
                 expect(res.body.message).to.equal("Order not found!");
                 expect(res.statusCode).to.equal(404);
@@ -72,12 +69,12 @@ chai.use(chaiHttp);
     describe('/POST add order', () => {
         it('should add an order', (done) => {
             const initalOrders = orders.length;
-            chai.request('http://localhost:4001/api/v1')
-            .post('/orders')
-            .send(editOrder)
-            .end((err, res) => {
-                expect(res.statusCode).to.equal(404);
-                // expect(res.body.length).to.equal(initalOrders + 1);
+            chai.request(app).
+            post('/api/v2/orders').
+            send(newOrder).
+            end((err, res) => {
+                expect(res.statusCode).to.equal(201);
+                expect(res.body.length).to.equal(initalOrders + 1);
                 done();
             });
         });
@@ -87,13 +84,13 @@ chai.use(chaiHttp);
 
 
 
-    describe('/PUT modify order', () => {
-        it('should add an order', (done) => {
+    describe('/PUT update order', () => {
+        it('should update an order', (done) => {
             const initalOrders = orders.length;
-            chai.request('http://localhost:4001/api/v1')
-            .put('/orders/1')
-            .send(editOrder)
-            .end((err, res) => {
+            chai.request(app).
+            put('/api/v2/orders/1').
+            send(newOrder).
+            end((err, res) => {
                 expect(res.statusCode).to.equal(201);
                 expect(res.body.length).to.equal(initalOrders);
                 done();
@@ -102,8 +99,8 @@ chai.use(chaiHttp);
 
 
         it('should not have an order', (done) => {
-            chai.request('http://localhost:4001/api/v1').
-            put('/orders/6').
+            chai.request(app).
+            put('/api/v2/orders/6').
             send(newOrder).
             end((err, res) => {
                 expect(res.body.message).to.equal("Order not found!");
@@ -111,9 +108,32 @@ chai.use(chaiHttp);
                 done();
             });
         });
-        
+           
+    });
 
 
-        
-    }); 
+    describe('/DELETE delete order', () => {
+        it('should delete an order', (done) => {
+            chai.request(app).
+            del('/api/v2/orders/2').
+            end((err, res) => {
+                expect(res.statusCode).to.equal(201);
+                expect(res.body.message).to.equal("Order deleted!");
+                done();
+            });
+        });
+
+
+        it('should not have an order', (done) => {
+            chai.request(app).
+            delete('/api/v1/orders/6').
+            send(orders).
+            end((err, res) => {
+                expect(res.body.message).to.equal("Order not found!");
+                expect(res.statusCode).to.equal(404);
+                done();
+            });
+        });
+
+    });       
 });
