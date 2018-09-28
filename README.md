@@ -1,5 +1,7 @@
 # FAST-FOOD-FAST APP
 
+[![Build Status](https://travis-ci.org/dorcasemiewo/fastfoodfast.svg?branch=backend)](https://travis-ci.org/dorcasemiewo/fastfoodfast)
+
 Fast-Food-Fast is a food delivery service app for a restaurant.
 ## Getting Started
 
@@ -57,7 +59,6 @@ Node is installed!
 
 
 ## Built With
-
 
 
 ## Contributing
